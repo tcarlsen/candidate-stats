@@ -194,3 +194,41 @@ $right-column-width: 250px;
   font-size: .9em;
   pointer-events: none;
 }
+
+@media (max-width: 767px) {
+  .app-paragraph {
+    max-width: 100%;
+  }
+
+  .chart-left-column {
+    width: 100%;
+    float: none;
+  }
+
+  .chart-right-column {
+    float: none;
+    width: 100%;
+  }
+
+  .chart-label {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .text-view {
+    flex-direction: column;
+    padding: 0;
+
+    &-number {
+      font-size: 6em;
+    }
+  }
+
+  .label {
+    font-size: 0.7em;
+  }
+
+  .text {
+    font-size: .8em;
+  }
+}

@@ -34,6 +34,8 @@
           maxValues.push d3.max value, (d) -> parseFloat d.value_pct
 
         maxValue = d3.max maxValues, (d) -> d
+        columnMargin = 5
+        groupMargin = 60
         svg =
           ele: base.select ".chart-svg"
           top: 50
@@ -41,6 +43,12 @@
           bottom: 70
           height: -> containerHeight - @top - @bottom
           width: -> containerWidth - (@left * 2)
+
+        if svg.width() < 360
+          columnMargin = 2
+          groupMargin = 15
+          svg.left = 35
+
         yScale = d3.scale
           .linear()
           .domain [0, maxValue]
@@ -53,8 +61,6 @@
           .tickFormat (d) -> "#{d}%"
           .orient "left"
 
-        columnMargin = 5
-        groupMargin = 60
         columnWidth = ((svg.width() - columnMargin - (groupMargin * groupTotal)) / (labelCount * groupTotal)) - columnMargin
         groupWidth = svg.width() / groupTotal
 
