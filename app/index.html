@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>candidate-stats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="http://localhost:9292/politiko.medieimperiet.dk/dist/css/bootstrap.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Embed code start -->
+            <link rel="stylesheet" href="/styles.min.css">
+            <div ng-app="candidate-stats" ng-controller="StatsController">
+              <h1 class="app-header">{{header.headline}}</h1>
+              <p class="app-paragraph">{{header.paragraph}}</p>
+              <div candidate-stat="kon" data-type="column"></div>
+              <div candidate-stat="alder" data-type="pie"></div>
+              <div candidate-stat="gennemsnitsalder" data-type="text"></div>
+              <div candidate-stat="bruttoindkomst" data-type="column"></div>
+              <div candidate-stat="uddannelse" data-type="column"></div>
+              <div candidate-stat="civilstand" data-type="pie"></div>
+              <div candidate-stat="bor_i_storkreds" data-type="column"></div>
+              <div candidate-stat="ansat" data-type="column"></div>
+              <div candidate-stat="boligform" data-type="column"></div>
+              <div candidate-stat="born" data-type="column"></div>
+              <div candidate-stat="ideologisk_skala" data-type="column"></div>
+              <div candidate-stat="debutant" data-type="column"></div>
+              <div candidate-stat="opstillet" data-type="column"></div>
+              <div candidate-stat="nyvalgt" data-type="column"></div>
+            </div>
+            <script src="/angular/angular.js"></script>
+            <script src="/angular-touch/angular-touch.js"></script>
+            <script src="/d3/d3.js"></script>
+            <script src="/d3-tip/index.js"></script>
+            <script src="/scripts.min.js"></script>
+            <!-- Embed code end -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

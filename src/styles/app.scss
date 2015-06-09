@@ -1,0 +1,200 @@
+@import "colors";
+
+$right-column-width: 250px;
+
+[candidate-stat] {
+  display: block;
+  background-color: $grey;
+  margin-bottom: 40px;
+  padding: 1px 10px 20px 10px;
+}
+
+.app-header {
+  font-family: 'Source Sans Pro';
+  font-weight: 700;
+  display: block;
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.app-paragraph {
+  max-width: calc(100% - #{$right-column-width});
+}
+
+.chart-header {
+  margin-bottom: 0.5px;
+}
+
+.chart-description {
+  color: $dark-grey;
+}
+
+.chart-left-column {
+  float: left;
+  background-color: $white;
+  width: calc(100% - #{$right-column-width});
+
+  &.full-width {
+    width: 100%;
+  }
+}
+
+.chart-svg {
+  display: block;
+}
+
+.axis.y {
+  path {
+    display: none;
+    fill-opacity: 0.2;
+  }
+
+  line {
+    stroke: $grey;
+    stroke-width: 1;
+    fill: none;
+    shape-rendering: crispEdges;
+  }
+
+  text {
+    font-size: .8em;
+  }
+
+  g:first-child {
+    text {
+      display: none;
+    }
+
+    line {
+      stroke: $black;
+    }
+  }
+}
+
+.column, .slice {
+  &.c-1 {
+    fill: $chart-blue;
+  }
+  &.c-2 {
+    fill: $chart-red;
+  }
+  &.c-3 {
+    fill: $chart-green;
+  }
+  &.c-4 {
+    fill: $chart-yellow;
+  }
+  &.c-5 {
+    fill: $chart-purple;
+  }
+  &.c-6 {
+    fill: $chart-light-red;
+  }
+  &.c-7 {
+    fill: $chart-light-blue;
+  }
+  &.c-8 {
+    fill: $chart-grey;
+  }
+  &.c-9 {
+    fill: $chart-orange;
+  }
+  &.c-10 {
+    fill: $chart-dark-blue;
+  }
+}
+
+.pie.text {
+  fill: $white;
+}
+
+.text {
+  font-size: .9em;
+}
+
+.text-view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 100%;
+  padding: 15px 45px;
+
+  &-container {
+    text-align: center;
+  }
+
+  &-number {
+    font-family: 'berlingske-slab';
+    font-size: 120px;
+    color: $orange;
+    margin: 0;
+  }
+
+  &-label {
+    @extend .label;
+
+    margin: 0;
+  }
+}
+
+.label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.chart-right-column {
+  float: left;
+  width: $right-column-width;
+}
+
+.chart-labels {
+  list-style: none;
+  margin: 0;
+  padding: 20px 15px;
+}
+
+.chart-label {
+  i {
+    margin-right: 10px;
+
+    &.c-1 {
+      color: $chart-blue;
+    }
+    &.c-2 {
+      color: $chart-red;
+    }
+    &.c-3 {
+      color: $chart-green;
+    }
+    &.c-4 {
+      color: $chart-yellow;
+    }
+    &.c-5 {
+      color: $chart-purple;
+    }
+    &.c-6 {
+      color: $chart-light-red;
+    }
+    &.c-7 {
+      color: $chart-light-blue;
+    }
+    &.c-8 {
+      color: $chart-grey;
+    }
+    &.c-9 {
+      color: $chart-orange;
+    }
+    &.c-10 {
+      color: $chart-dark-blue;
+    }
+  }
+}
+
+.d3-tip {
+  background: #fff;
+  border: 1px solid $dark-grey;
+  padding: .1em .5em;
+  font-size: .9em;
+  pointer-events: none;
+}
