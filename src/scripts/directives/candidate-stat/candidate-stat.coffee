@@ -141,8 +141,10 @@
           height: -> containerHeight - @bottom
           width: -> containerWidth
         groupWidth = svg.width() / groupTotal
+        maxRadius = (groupWidth / 2) - 5
         radius = (svg.height() / 2) - svg.top
-        radius = groupWidth - 20 if groupWidth < radius
+        radius = maxRadius if maxRadius < radius
+
         labelsVisible = []
         pie = d3.layout.pie()
           .sort null
