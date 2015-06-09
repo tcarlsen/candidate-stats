@@ -1,6 +1,6 @@
 {
   "name": "candidate-stats",
-  "version": "1.0.0-rc0",
+  "version": "1.0.0",
   "description": "an tool to show stats over all the candidates in the danish election 2015",
   "author": "tcarlsen",
   "dependencies": {
