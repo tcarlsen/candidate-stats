@@ -99,13 +99,29 @@
               .attr "x", (d, i) -> columnPadding + (columnWidth * i) + (columnMargin * (i + 1)) + (columnWidth / 2)
               .transition().duration(1000)
                 .attr "y", (d) -> yScale(d.value_pct) - 7
-          else
+          else if columnWidth > 11
             texts
               .attr "x", -> -svg.height()
               .attr "transform", "rotate(-90)"
               .attr "y", (d, i) -> columnPadding + (columnWidth * i) + (columnMargin * (i + 1)) + (columnWidth / 2) + 3
               .transition().duration(1000)
                 .attr "x", (d) -> -yScale(d.value_pct) + 25
+          else
+            texts.attr "display", "none"
+
+            if !tip
+              tip = d3.tip()
+                .attr "class", "d3-tip"
+                .html (d) ->
+                  pct = $filter("number")(d.value_pct, 1)
+
+                  return "#{pct}%"
+
+              draw.call(tip)
+
+            column
+              .on "mouseover", (d) -> tip.show d
+              .on "mouseout", tip.hide
 
           draw.append "text"
             .attr "class", "label"
