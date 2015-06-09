@@ -28,7 +28,12 @@
         scope.textView = true
 
       else if attrs.type is "column"
-        maxValue = d3.max results[2015], (d) -> parseFloat d.value_pct
+        maxValues = []
+
+        for key, value of results
+          maxValues.push d3.max value, (d) -> parseFloat d.value_pct
+
+        maxValue = d3.max maxValues, (d) -> d
         svg =
           ele: base.select ".chart-svg"
           top: 50
