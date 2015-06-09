@@ -106,7 +106,7 @@ gulp.task('build', function () {
   dest = 'build';
 
   del(dest);
-  gulp.start('scripts', 'styles', 'dom');
+  gulp.start('merge-scripts', 'styles');
 });
 /* Default task */
 gulp.task('default', ['corsproxy', 'connect', 'merge-scripts', 'styles', 'watch']);
