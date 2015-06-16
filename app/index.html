@@ -16,6 +16,10 @@
             <!-- Embed code start -->
             <link rel="stylesheet" href="/styles.min.css">
             <div ng-app="candidate-stats" ng-controller="StatsController">
+              <ul class="stats">
+                <li>Antal folkevalgte i 2015 lige nu: {{mandates}}/179</li>
+                <li>Senest opdateret: {{last_update | date:'medium'}}</li>
+              </ul>
               <h1 class="app-header">{{header.headline}}</h1>
               <p class="app-paragraph">{{header.paragraph}}</p>
               <div candidate-stat="kon" data-type="column"></div>

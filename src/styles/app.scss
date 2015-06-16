@@ -195,9 +195,27 @@ $right-column-width: 250px;
   pointer-events: none;
 }
 
+.stats {
+  float: right;
+  list-style: none;
+  margin: 0 0 0 1em;
+  padding: 0;
+
+  li {
+    font-size: .8em;
+    text-align: right;
+    margin-bottom: .4em;
+  }
+}
+
 @media (max-width: 767px) {
   .app-paragraph {
     max-width: 100%;
+  }
+
+  .app-header {
+    clear: both;
+    margin-top: .1em;
   }
 
   .chart-left-column {
@@ -230,5 +248,19 @@ $right-column-width: 250px;
 
   .text {
     font-size: .8em;
+  }
+
+  .stats {
+    float: none;
+    display: inline-block;
+    margin: 1em 0 0 0;
+
+    li {
+      float: left;
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
   }
 }
