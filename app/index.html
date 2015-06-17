@@ -16,6 +16,12 @@
             <!-- Embed code start -->
             <link rel="stylesheet" href="/styles.min.css">
             <div ng-app="candidate-stats" ng-controller="StatsController">
+              <div class="updated-popup" ng-show="showPopup">
+                <h3 class="updated-popup-header" ng-click="refresh()">Der er nye resultater</h3>
+                <p class="updated-popup-text" ng-click="refresh()"><u>Klik</u> her for at opdatere siden</p>
+                <small class="updated-popup-remove" ng-click="terminate()">Vis ikke denne besked igen</small>
+                <span class="updated-popup-close" ng-click="showPopup = false">×</span>
+              </div>
               <ul class="stats">
                 <li>Antal folkevalgte i 2015 lige nu: {{mandates}}/179</li>
                 <li>Senest opdateret: {{last_update | date:'medium'}}</li>
@@ -38,6 +44,7 @@
               <div candidate-stat="opstillet" data-type="column"></div>
               <div candidate-stat="nyvalgt" data-type="column"></div>
             </div>
+            <script src="http://hosting-docker-fv15-ws-1802147016.eu-west-1.elb.amazonaws.com/socket.io/socket.io.js"></script>
             <script src="/angular/angular.js"></script>
             <script src="/angular-touch/angular-touch.js"></script>
             <script src="/d3/d3.js"></script>
