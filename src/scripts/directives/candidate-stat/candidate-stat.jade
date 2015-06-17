@@ -4,7 +4,8 @@ div.chart-left-column(ng-class="{'full-width': textView}")
   svg.chart-svg(width="100%" height="300px" ng-if="!textView")
   div.text-view(ng-if="textView")
     div.text-view-container(ng-repeat="(key, value) in values")
-      h1.text-view-number {{value | number:0}} år
+      h1.text-view-number(ng-if="!value") -
+      h1.text-view-number(ng-if="value") {{value | number:0}} år
       p.text-view-label {{key}}
 div.chart-right-column(ng-if="!textView")
   ul.chart-labels

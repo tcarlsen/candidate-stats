@@ -159,7 +159,7 @@
         labelsVisible = []
         pie = d3.layout.pie()
           .sort null
-          .value (d) -> d.value_pct
+          .value (d) -> d.value_pct + 1
         arc = d3.svg.arc()
           .outerRadius radius
           .innerRadius 20
