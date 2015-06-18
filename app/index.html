@@ -23,11 +23,11 @@
                 <span class="updated-popup-close" ng-click="showPopup = false">×</span>
               </div>
               <ul class="stats">
-                <li>Antal folkevalgte i 2015 lige nu: {{mandates}}/179</li>
-                <li>Senest opdateret: {{last_update | date:'medium'}}</li>
+                <li>Antal folkevalgte i 2015 lige nu: {{::mandates}}/179</li>
+                <li>Senest opdateret: {{::last_update | date:'medium'}}</li>
               </ul>
-              <h1 class="app-header">{{header.headline}}</h1>
-              <p class="app-paragraph">{{header.paragraph}}</p>
+              <h1 class="app-header">{{::header.headline}}</h1>
+              <p class="app-paragraph">{{::header.paragraph}}</p>
               <a class="link" href="http://www.politiko.dk/valgtekandidater">Hvem er valgt?</a>
               <div candidate-stat="kon" data-type="column"></div>
               <div candidate-stat="alder" data-type="pie"></div>
