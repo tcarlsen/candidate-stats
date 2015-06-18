@@ -16,9 +16,9 @@
             <!-- Embed code start -->
             <link rel="stylesheet" href="/styles.min.css">
             <div ng-app="candidate-stats" ng-controller="StatsController">
-              <div class="updated-popup" ng-show="showPopup">
-                <h3 class="updated-popup-header" ng-click="refresh()">Der er nye resultater</h3>
-                <p class="updated-popup-text" ng-click="refresh()"><u>Klik</u> her for at opdatere siden</p>
+              <div class="updated-popup" ng-class="{'show-popup': showPopup}">
+                <h3 class="updated-popup-header" ng-click="refresh()">Nye resultater</h3>
+                <p class="updated-popup-text" ng-click="refresh()">Klik her for at<br>opdatere siden</p>
                 <small class="updated-popup-remove" ng-click="terminate()">Vis ikke denne besked igen</small>
                 <span class="updated-popup-close" ng-click="showPopup = false">×</span>
               </div>

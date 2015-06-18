@@ -225,32 +225,51 @@ $right-column-width: 250px;
 }
 
 .updated-popup {
-  $popWidth: 220px;
+  $popWidth: 280px;
+
+
+  transition: top 200ms linear;
 
   position: fixed;
-  top: 50px;
+  top: -200px;
   left: 50%;
   width: $popWidth;
   margin-left: -($popWidth / 2);
   background-color: #fff;
   text-align: center;
-  border-top: 7px solid #BB242E;
-  box-shadow: 0px 10px 10px 1px rgba(0,0,0,0.75);
-  padding-bottom: 10px;
+  box-shadow: 0px 6px 11px 0px rgba(0,0,0,0.60);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-top: 15px;
+  padding-bottom: 20px;
 
   &:before {
-    border-top: 7px solid #136A90;
+    border-top: 7px solid #BB242E;
     width: ($popWidth / 2);
     position: absolute;
-    top: -7px;
+    top: 10px;
+    left: 0;
+    z-index: 20;
+    content: ' ';
+  }
+
+  &:after {
+    border-top: 7px solid #136A90;
+    width: $popWidth;
+    position: absolute;
+    top: 10px;
     left: 0;
     z-index: 10;
     content: ' ';
   }
 
+  &.show-popup {
+    top: -10px;
+  }
+
   &-header {
     cursor: pointer;
-    font-size: 17px;
+    font-size: 24px;
     text-transform: uppercase;
   }
   &-text {
@@ -325,21 +344,35 @@ $right-column-width: 250px;
   }
 
   .updated-popup {
-    top: 0;
+    top: -80px;
     left: 0;
     right: 0;
     width: 100%;
     margin: 0;
     text-align: left;
     padding: 10px 15px 0 15px;
+    border-radius: 0;
 
     &:before {
+      top: 0;
       width: 50%;
+    }
+    &:after {
+      top: 0;
+      width: 100%;
+    }
+
+    &.show-popup {
+      top: 0;
+    }
+
+    br {
+      display: none;
     }
 
     &-header {
       font-size: 18px;
-      margin: 0;
+      margin: 8px 0 0 0;
     }
     &-text u {
       text-decoration: none;
@@ -350,8 +383,8 @@ $right-column-width: 250px;
     &-close {
       cursor: pointer;
       position: absolute;
-      top: -10px;
-      right: 10px;
+      top: -3px;
+      right: 15px;
       display: block;
       font-size: 60px;
     }
