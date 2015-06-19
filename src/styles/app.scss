@@ -98,6 +98,12 @@ $right-column-width: 250px;
   &.c-10 {
     fill: $chart-dark-blue;
   }
+  &.c-11 {
+    fill: $chart-dark-red;
+  }
+  &.c-12 {
+    fill: $chart-teal;
+  }
 }
 
 .pie.text {
@@ -183,6 +189,12 @@ $right-column-width: 250px;
     }
     &.c-10 {
       color: $chart-dark-blue;
+    }
+    &.c-11 {
+      color: $chart-dark-red;
+    }
+    &.c-12 {
+      color: $chart-teal;
     }
   }
 }
